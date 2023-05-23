@@ -1,0 +1,14 @@
+[Unit]
+Description=Discord Bot Service
+After=network.target
+
+[Service]
+User=ec2-user
+Group=ec2-user
+WorkingDirectory=/home/ec2-user/nodediscord
+ExecStart=/usr/bin/node /home/ec2-user/nodediscord/index.js
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
